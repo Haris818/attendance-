@@ -1,0 +1,6 @@
+<?php require_login(); ?>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title><?= h($page_title ?? 'Dashboard') ?> | Student Attendance</title><link rel="stylesheet" href="style.css"></head>
+<body><aside class="sidebar"><div class="side-brand"><span class="brand-mark small-mark">SA</span><span>Attend<span class="accent">ly</span></span></div>
+<nav><a href="index.php" class="<?= ($active ?? '')==='dashboard'?'active':'' ?>">▦ &nbsp; Dashboard</a><a href="students.php" class="<?= ($active ?? '')==='students'?'active':'' ?>">♙ &nbsp; Students</a><a href="take_attendance.php" class="<?= ($active ?? '')==='attendance'?'active':'' ?>">✓ &nbsp; Take Attendance</a><a href="reports.php" class="<?= ($active ?? '')==='reports'?'active':'' ?>">▤ &nbsp; Reports</a></nav>
+<div class="side-bottom"><div class="user-chip">Logged in as <b><?= h($_SESSION['admin_username'] ?? 'Admin') ?></b></div><a href="logout.php">↪ &nbsp; Logout</a></div></aside>
+<main class="main"><header class="topbar"><div><div class="eyebrow">SCHOOL MANAGEMENT</div><h1><?= h($page_title ?? 'Dashboard') ?></h1></div><div class="top-user">● &nbsp; <?= h($_SESSION['admin_username'] ?? 'Admin') ?></div></header><section class="content">

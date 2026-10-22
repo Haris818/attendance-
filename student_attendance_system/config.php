@@ -1,10 +1,11 @@
 <?php
 // Database connection. Update credentials if your MySQL settings differ.
 session_start();
-$host = 'localhost';
-$db   = 'student_attendance';
-$user = 'root';
-$pass = '';
+$host = 'db.fr-roub1.bengt.wasmernet.com';
+$port = 20184;
+$db   = 'user_7ed3fb3f';
+$user = 'user_7ed3fb3f';
+$pass = 'pw_d3nBUGubFJ05BmuhUe977z9ArR9e6Iy6';
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
@@ -13,7 +14,7 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES => false,
 ];
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    $pdo = new PDO($dsn, $user, $pass, $options, $port);
 } catch (PDOException $e) {
     http_response_code(500);
     exit('Database connection failed. Import database.sql and check config.php.');
